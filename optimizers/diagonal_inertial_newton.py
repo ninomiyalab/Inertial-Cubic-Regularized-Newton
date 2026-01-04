@@ -1,8 +1,8 @@
 import numpy as np
 from scipy.linalg import lu_factor, lu_solve
 
-def proximal_inertial_newton(f, jac, hess, w_init, mu=0.75, eps=1.0, alpha=1.0, max_iter=100, tol=1e-6):
-    """Proximal Inertial Newton Method"""
+def diagonal_inertial_newton(f, jac, hess, w_init, mu=0.75, eps=1.0, alpha=1.0, max_iter=100, tol=1e-6):
+    """Diagonal (Proximal) Inertial Newton Method"""
     w = np.array(w_init, dtype=float)
     identity = np.identity(len(w))
     mom = np.zeros_like(w)
